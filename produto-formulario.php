@@ -2,6 +2,9 @@
 include("cabecalho.php");
 include("conecta.php");
 include("banco-categoria.php");
+include ("logica-usuario.php");
+
+verificaUsuario();
 ?>
 <h1>Formulário de produto</h1>
     <form action="adiciona-produto.php" method="POST">
@@ -34,7 +37,7 @@ include("banco-categoria.php");
 
             </tr>
             <tr>
-                <td><button class="btn btn-primary" type="submit">Cadastrar</td>
+                <td><button class="btn btn-primary" type="submit">Cadastrar</button></td>
             </tr>
         </table>
     </form>

@@ -1,6 +1,8 @@
-<?php include("cabecalho.php");?>
-<?php include("conecta.php");?>
-<?php include("banco-produto.php");?>
+<?php
+include("cabecalho.php");
+include("conecta.php");
+include("banco-produto.php");
+?>
 
 <?php if (array_key_exists("removido",$_GET) && $_GET["removido"]==true ) {
     $id=$_GET["id"] ?>
