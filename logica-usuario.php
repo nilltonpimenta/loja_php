@@ -11,7 +11,8 @@ function usuarioLogado(){
 
 function verificaUsuario(){
     if (!usuarioEstaLogado()) {
-    header('Location: index.php?falhaDeSeguranca=true');
+    $_SESSION['danger']="Você não tem aceso a essa funcionalidade!";
+    header('Location: index.php');
     die();
     }
 }
@@ -21,6 +22,8 @@ function logaUsuario($email){
 }
 
 function logout(){
+    //Tenho como opção tbm
     //unset($_SESSION['usuarioLogado']);
     session_destroy();
+    session_start();
 }

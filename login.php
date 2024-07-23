@@ -8,9 +8,11 @@ $usuario = buscaUsuario($conexao, $_POST["email"], $_POST["senha"]);
 //var_dump($usuario);
 
 if ($usuario == null) {
-    header('Location: index.php?login=0');
+    $_SESSION['danger']="Usuário ou senha inválidos";
+    header('Location: index.php');
 } else {
     logaUsuario($usuario['email']);
-    header('Location: index.php?login=true');
+    $_SESSION['success']="Logado com sucesso!";
+    header('Location: index.php');
 }
 die();

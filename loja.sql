@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Jul-2024 às 19:46
+-- Tempo de geração: 23-Jul-2024 às 22:44
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 7.4.33
 
@@ -53,8 +53,18 @@ CREATE TABLE `produtos` (
   `nome` varchar(255) DEFAULT NULL,
   `preco` decimal(10,2) DEFAULT NULL,
   `categoria_id` int(11) NOT NULL,
-  `usado` tinyint(1) DEFAULT 0
+  `usado` tinyint(1) DEFAULT 0,
+  `descricao` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `preco`, `categoria_id`, `usado`, `descricao`) VALUES
+(1, 'Bola de futebol', '120.00', 1, 0, 'Assinada pelo Zidanilo'),
+(2, 'Lápis', '1.99', 2, 0, 'Para escrever'),
+(3, 'Pizza', '3.50', 4, 0, 'Uma fatia');
 
 -- --------------------------------------------------------
 
@@ -70,7 +80,7 @@ CREATE TABLE `usuarios` (
 
 --
 -- Extraindo dados da tabela `usuarios`
---
+-- password: 123456
 
 INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
 (1, 'guilherme.silveira@alura.com.br', 'e10adc3949ba59abbe56e057f20f883e');
@@ -112,7 +122,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
