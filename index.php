@@ -1,10 +1,6 @@
 <?php
 include("cabecalho.php");
 include ("logica-usuario.php");
-include ("mostra-alerta.php");
-
-mostraAlerta('success');
-mostraAlerta('danger');
 ?>
             <h1>Bem vindo!</h1>
             <?php   if (usuarioEstaLogado()) { ?>

@@ -17,14 +17,14 @@ if (array_key_exists("usado",$_POST)) {
     $usado = "false";
 }
 
-if (insereProduto($conexao,$nome,$preco,$descricao,$categoria_id,$usado)) { ?>
-    <p class="text-success">Produto <?php echo $nome;?>, de <?= $preco ?>, foi adicionado com SUCESSO!</p>
-<?php } else { 
+if (insereProduto($conexao,$nome,$preco,$descricao,$categoria_id,$usado)) { 
+    $_SESSION['success']="Produto $nome, de $preco, foi adicionado com SUCESSO!";
+    header("Location:produto-lista.php");
+} else { 
     $msg = mysqli_error($conexao);
-?>
-    <p class="text-danger">O produto não adicionado: <?=$msg?> </p>
-
-<?php }
+    $_SESSION['success']="O produto não foi adicionado: <?=$msg?>";
+    header("Location:produto-lista.php");
+}
 
 mysqli_close($conexao);
 ?>
