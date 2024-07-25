@@ -18,7 +18,7 @@
                     <div class="nav navbar-nav">
                     <li><a href="produto-formulario.php">Adiciona produto</a></li>
                     <li><a href="produto-lista.php">Produtos</a></li>
-                    <li><a href="">Sobre</a></li>
+                    <li><a href="contato.php">Contato</a></li>
                     </div>  
         </div>
     </div>
