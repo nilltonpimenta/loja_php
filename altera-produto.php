@@ -15,14 +15,14 @@ if (array_key_exists("usado",$_POST)) {
     $usado = "false";
 }
 
-if (alteraProduto($conexao,$id,$nome,$preco,$descricao,$categoria_id,$usado)) { ?>
-    <p class="text-success">Produto <?php echo $nome;?>, de <?= $preco ?>, foi alterado com SUCESSO!</p>
-<?php } else { 
+if (alteraProduto($conexao,$id,$nome,$preco,$descricao,$categoria_id,$usado)) { 
+    $_SESSION['success']="Produto $nome, de $preco, foi alterado com SUCESSO!";
+    header("Location:produto-lista.php");
+} else { 
     $msg = mysqli_error($conexao);
-?>
-    <p class="text-danger">O produto não foi alterado: <?=$msg?> </p>
-
-<?php }
+    $_SESSION['danger']="O produto não foi alterado: <?=$msg?>";
+    header("Location:produto-lista.php");
+}
 
 mysqli_close($conexao);
 ?>
