@@ -20,7 +20,7 @@ if (alteraProduto($conexao,$id,$nome,$preco,$descricao,$categoria_id,$usado)) {
     header("Location:produto-lista.php");
 } else { 
     $msg = mysqli_error($conexao);
-    $_SESSION['danger']="O produto não foi alterado: <?=$msg?>";
+    $_SESSION['danger']="O produto não foi alterado: $msg";
     header("Location:produto-lista.php");
 }
 

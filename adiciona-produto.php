@@ -22,7 +22,7 @@ if (insereProduto($conexao,$nome,$preco,$descricao,$categoria_id,$usado)) {
     header("Location:produto-lista.php");
 } else { 
     $msg = mysqli_error($conexao);
-    $_SESSION['danger']="O produto não foi adicionado: <?=$msg?>";
+    $_SESSION['danger']="O produto não foi adicionado: $msg";
     header("Location:produto-lista.php");
 }
 
